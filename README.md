@@ -80,8 +80,8 @@ sudo pacman -S base-devel libx11 libxext
 ### Build from Source
 
 ```bash
-git clone https://github.com/<your-username>/oneko-hyprland.git
-cd oneko-hyprland
+git clone https://github.com/akshaytiwary-dev/oneko-k.git
+cd oneko-k
 make
 sudo make install
 ```
