@@ -1,4 +1,4 @@
-# oneko-hyprland 🐾
+# oneko-K 🐾
 
 > A modernized, true-transparency port of the classic **oneko** desktop pet for **Wayland / Hyprland**, featuring native Hyprland IPC cursor tracking and distance-based proximity waking!
 
