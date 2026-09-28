@@ -57,14 +57,46 @@ On modern Wayland compositors (specifically **Hyprland**), legacy `oneko` suffer
 
 `oneko-hyprland` includes all classic character skins and custom chasing cursors:
 
-| Flag | Character | Description | Chase Object |
+| Animal / Character | Exact Launch Command | Description | Chased Object |
 | :--- | :--- | :--- | :--- |
-| *(default)* or `-neko` | **Classic Neko** | The original playful Japanese white cat | Mouse pointer |
-| `-tora` | **Tora-Neko** | Playful tiger-striped cat | Mouse pointer |
-| `-dog` | **Inu (Dog)** | Energetic puppy | Bone cursor 🦴 |
-| `-bsd` or `-bsd_daemon` | **BSD Daemon** | Marshall Kirk McKusick's classic BSD Beastie | Trident cursor 🔱 |
-| `-sakura` | **Sakura** | Sakura Kinomoto (*Cardcaptor Sakura*) | Clow Card 🃏 |
-| `-tomoyo` | **Tomoyo** | Tomoyo Daidouji (*Cardcaptor Sakura*) | Cherry Blossom Petal 🌸 |
+| **Classic Cat (Neko)** | `oneko &`<br>*(or `oneko -neko &`)* | The original playful Japanese white cat | Mouse pointer |
+| **Tiger Cat (Tora)** | `oneko -tora &` | Playful tiger-striped cat | Mouse pointer |
+| **Dog (Inu)** | `oneko -dog &` | Energetic puppy | Bone cursor 🦴 |
+| **BSD Daemon (Beastie)** | `oneko -bsd &`<br>*(or `oneko -bsd_daemon &`)* | Marshall Kirk McKusick's BSD Daemon | Trident cursor 🔱 |
+| **Sakura Kinomoto** | `oneko -sakura &` | Sakura Kinomoto (*Cardcaptor Sakura*) | Clow Card 🃏 |
+| **Tomoyo Daidouji** | `oneko -tomoyo &` | Tomoyo Daidouji (*Cardcaptor Sakura*) | Cherry Blossom Petal 🌸 |
+
+### ⚡ Exact Commands to Launch Each Animal
+
+Run any of the following commands directly in your terminal to start your desktop companion in the background (`&`):
+
+```bash
+# 1. Classic Cat (Neko)
+oneko &
+
+# 2. Tiger-Striped Cat (Tora)
+oneko -tora &
+
+# 3. Dog / Puppy (Inu) — chases a bone
+oneko -dog &
+
+# 4. BSD Daemon (Beastie) — chases a trident
+oneko -bsd &
+# (or the long form)
+oneko -bsd_daemon &
+
+# 5. Sakura Kinomoto — chases Clow Cards
+oneko -sakura &
+
+# 6. Tomoyo Daidouji — chases cherry blossom petals
+oneko -tomoyo &
+```
+
+> [!TIP]
+> **To close or stop oneko at any time**, simply run:
+> ```bash
+> killall oneko
+> ```
 
 ---
 
@@ -120,23 +152,34 @@ windowrule = no_focus true, match:class ^(oneko)$
 ### Quick Start Examples
 
 ```bash
-# Default cat with 500px proximity trigger (runs in background)
-oneko &
+# Classic Cat
+oneko &                                   # Default 500px proximity
+oneko -proximity 200 &                    # Wake up only when cursor gets closer (200px)
 
-# Tiger cat with custom 300px proximity radius
-oneko -tora -proximity 300 &
+# Tiger Cat
+oneko -tora &                             # Default 500px proximity
+oneko -tora -proximity 300 &              # 300px proximity radius
 
-# Playful dog chasing a bone with faster movement
-oneko -dog -speed 20 &
+# Dog (chases a bone cursor)
+oneko -dog &                              # Default dog
+oneko -dog -speed 20 &                    # Faster dog
+oneko -dog -proximity 400 -speed 18 &     # 400px proximity + faster running speed
 
-# BSD Daemon chasing a trident with custom foreground color
-oneko -bsd -fg "#ff5555" &
+# BSD Daemon (chases a trident cursor)
+oneko -bsd &                              # Default Beastie
+oneko -bsd -fg red &                      # Red Beastie
+oneko -bsd -proximity 600 -fg "#ff5555" & # Custom color + 600px proximity
 
-# Sakura Kinomoto chasing Clow Cards
-oneko -sakura &
+# Sakura Kinomoto (chases Clow Cards)
+oneko -sakura &                           # Default Sakura
+oneko -sakura -proximity 250 &            # 250px proximity radius
 
-# Tomoyo Daidouji chasing cherry blossom petals
-oneko -tomoyo &
+# Tomoyo Daidouji (chases cherry blossom petals)
+oneko -tomoyo &                           # Default Tomoyo
+oneko -tomoyo -proximity 350 &            # 350px proximity radius
+
+# Kill or stop any running pet
+killall oneko
 ```
 
 ### Full Command-Line Options Reference
