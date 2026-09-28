@@ -1,0 +1,10 @@
+# Build output
+oneko
+*.o
+*.a
+*.so
+
+# Temporary files
+/tmp/
+*.log
+.DS_Store
